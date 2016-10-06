@@ -1,0 +1,41 @@
+[<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Extra Assign. for DOM QUESTION-1</title>
+</head>
+
+<body>
+    <select id="drop">
+        <option value="invisible">Make Invisible</option>
+        <option value="visible">Make visible and color change</option>
+        <option value="color">Change Color</option>
+        <option value="default">Default</option>
+    </select>
+    <p id="para">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.</p>
+    <script>
+    var _id = function _id(id) {
+        return document['getElementById'](id);
+    }
+    var para = _id('para');
+    var drop = _id('drop');
+    var events = document['querySelectorAll']('option')
+
+
+    drop['addEventListener']('change', function() {
+        if (drop.value === "invisible") {
+            para['style']['visibility'] = "hidden"
+        } else if (drop.value === "visible") {
+            para['style']['visibility'] = 'visible'
+            para['style']['color'] = "blue"
+        } else if (drop.value === "color") {
+            para['style']['color'] = "red"
+        } else {
+            para['style'] = 'default'
+        }
+
+    });
+    </script>
+</body>
+
+</html>
